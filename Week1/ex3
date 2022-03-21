@@ -1,0 +1,13 @@
+3.1)  ps -e | wc -l (ps -e shows all the working processes right now and piped with wc -l counts them)
+
+3.2) mkdir 'MMS C camp'
+     find . -name "*.c" -exec cp "{}" ./Test \;
+     rm [0-9]*
+     
+3.3) chmod 700 testFile
+     chmod 750 testFile
+     chmod 753 testFile
+     
+3.4) ws -l source1.c source2.c
+     wc -l source1.c source2.c > filecount
+
