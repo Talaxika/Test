@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <errno.h>
 #include <string.h>
-#include <math.h>
 
-//run command -gcc ex2.c -o ex2 - ./ex2 myfile.txt output.hex -TB
+//run command -gcc ex2.c -o ex2; ./ex2 myfile.txt output.hex -TB
 
 int main(int argc, char* argv[]) {
     FILE* fpr = fopen(argv[1], "r");
@@ -16,13 +15,14 @@ int main(int argc, char* argv[]) {
     }
 
     char buffer[200];
-    char upper[200] = "65536";
+    char upper[200] = "65535";
     while ((fgets(buffer, 200, fpr)) != NULL)
     {
         int result = strcmp(buffer, upper);
         if (buffer < 0 || result > 0)
         {
             fprintf(stderr, "Wrong input.");
+            return 1;
         }
                
         fputs(buffer, fpwr);
